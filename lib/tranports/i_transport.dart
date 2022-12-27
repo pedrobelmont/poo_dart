@@ -1,3 +1,5 @@
-abstract class Transport {
-  void entregar();
+class Transport {
+  void entregar() {
+    print(' procurando seu transporte ');
+  }
 }
