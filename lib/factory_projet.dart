@@ -3,14 +3,22 @@ import 'tranports/o_trasports.dart';
 
 enum TiposEntrega { mar, terra, ar }
 
-void main() {
-  Transport pedido = RoadLogistics().planDeluvery(TiposEntrega.mar);
-  pedido.entregar();
+void main() {}
+
+class Pedido {
+  String nome;
+  bool etregaRapida;
+  Pedido({required this.nome, required this.etregaRapida});
+
+  void criaPedido() {
+    if (etregaRapida) {
+      Transport transportPedido = ViasAerias().planDeluvery(TiposEntrega.ar);
+    } else {}
+  }
 }
 
 abstract class Logistics {
   TiposEntrega? tiposEntrega;
-
   planDeluvery(TiposEntrega tiposEntrega) {
     if (tiposEntrega == TiposEntrega.terra) {
       return RoadLogistics().createTransport();
